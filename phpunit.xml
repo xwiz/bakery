@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true">
+  <coverage processUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">./app</directory>
+    </include>
+  </coverage>
+  <testsuites>
+    <testsuite name="All">
+      <directory suffix=".php">./tests/</directory>
+    </testsuite>
+    <testsuite name="Unit">
+      <directory suffix=".php">./tests/Unit</directory>
+    </testsuite>
+    <testsuite name="Feature">
+      <directory suffix=".php">./tests/Feature</directory>
+    </testsuite>
+    <testsuite name="Api">
+      <directory suffix=".php">./tests/APIs</directory>
+    </testsuite>
+    <testsuite name="Repositories">
+      <directory suffix=".php">./tests/Feature</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <env name="DB_FOREIGN_KEYS" value="true"/>
+    <env name="DB_DATABASE" value="database/testing.sqlite"/>
+    <env name="DB_CONNECTION" value="sqlite"/>
+    <server name="APP_ENV" value="testing"/>
+    <server name="JWT_SECRET" value="KU3I7SrUrPnAGzWvITcrX3bpcc85nffdMKyzi5n8XUnJwblpTtME917MgK57lK5i"/>
+    <server name="CACHE_DRIVER" value="file"/>
+    <server name="QUEUE_CONNECTION" value="sync"/>
+    <server name="SESSION_DRIVER" value="array"/>
+    <server name="APP_CONFIG_CACHE" value="bootstrap/cache/config.phpunit.php"/>
+    <server name="APP_SERVICES_CACHE" value="bootstrap/cache/services.phpunit.php"/>
+    <server name="APP_PACKAGES_CACHE" value="bootstrap/cache/packages.phpunit.php"/>
+    <server name="APP_ROUTES_CACHE" value="bootstrap/cache/routes.phpunit.php"/>
+    <server name="APP_EVENTS_CACHE" value="bootstrap/cache/events.phpunit.php"/>
+    <server name="MAIL_MAILER" value="log"/>
+    <server name="TELESCOPE_ENABLED" value="false"/>
+  </php>
+</phpunit>
